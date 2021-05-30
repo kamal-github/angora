@@ -1,0 +1,4 @@
+.scannerwork
+*.cover
+angoracov.out
+.idea/

@@ -1,0 +1,14 @@
+version: '3'
+networks:
+  angora-nw:
+    driver: bridge
+
+services:
+  rabbit:
+    image: 'rabbitmq:3.8.9-management-alpine'
+    container_name: ag-rabbit
+    networks:
+      - angora-nw
+    ports:
+      - '56721:5672'
+      - '15673:15672'
