@@ -111,6 +111,7 @@ func TestClientPublish(t *testing.T) {
 			},
 		})
 
+	assert.NoError(t, err)
 	assert.Equal(t, payload, consume(t, ch, qn, true))
 }
 
@@ -145,6 +146,7 @@ func TestClientPublish_withReconnectOnConnectionClose(t *testing.T) {
 			},
 		})
 
+	assert.NoError(t, err)
 	assert.Equal(t, payload, consume(t, ch, qn, true))
 }
 
@@ -457,7 +459,6 @@ BenchmarkClientStartConsumersGroupsWithPoolingEnabled
 BenchmarkClientStartConsumersGroupsWithPoolingEnabled-8   	   16350	     63752 ns/op
 */
 func BenchmarkClientStartConsumersGroupsWithPoolingEnabled(b *testing.B) {
-	qn, ex := "bench-client-consume-channel-pool-queue", "bench-client-consume-channel-pool-Exchange"
 	qn, ex, rKey := uniqueStr(b, "bench-queue"), uniqueStr(b, "bench.exchange"), uniqueStr(b, "bench.rKey")
 	_, closer := setup(b, qn, ex, rKey)
 	defer closer()
