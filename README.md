@@ -97,6 +97,11 @@ This project is licensed under the [MIT license](LICENSE).
 ## Contributing
 Create your pull request on a branch other than main. Add test or example to reflect your changes.
 
-This library covered by the integration tests, before running tests make sure you have RabbitMQ running on any host, export the environment variable `AMQP_URL=amqp://host/` and run `go test -tags integration` or `make test`.
- 
+This library is covered by the integration tests, before running tests make sure you have RabbitMQ running on local or container (use `docker-compose.yml` to start the rabbitMQ) 
+
+```
+AMQP_URL=amqp://0.0.0.0/56721
+make test
+```
+
 Github workflow will also run the integration tests.
