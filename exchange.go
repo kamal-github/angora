@@ -1,6 +1,6 @@
 package angora
 
-import "github.com/streadway/amqp"
+import amqp "github.com/rabbitmq/amqp091-go"
 
 // ExchangeConfig is RabbitMQ Exchange configuration.
 type ExchangeConfig struct {

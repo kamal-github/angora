@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/streadway/amqp"
+	amqp "github.com/rabbitmq/amqp091-go"
 )
 
 // DeliveryHandler is a AMQP message handler.

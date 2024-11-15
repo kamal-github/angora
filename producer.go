@@ -1,6 +1,6 @@
 package angora
 
-import "github.com/streadway/amqp"
+import amqp "github.com/rabbitmq/amqp091-go"
 
 // ProducerConfig represents RabbitMQ Producer configuration.
 type ProducerConfig struct {

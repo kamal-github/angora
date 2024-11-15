@@ -9,7 +9,7 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/kamal-github/angora/internal/backoff"
-	"github.com/streadway/amqp"
+	amqp "github.com/rabbitmq/amqp091-go"
 )
 
 const (
@@ -31,10 +31,10 @@ var (
 // Connection is a RabbitMQ client wrapper with additional capabilities to have the reliable
 // Publishing and consumption of messages.
 //
-//  * Support Reconnecting(with exponential backoff) with RabbitMQ Broker, when it is available again.
-//  * PublishConfirm for reliable Publishing and republish, if message cannot be confirmed.
-//  * Support Channel pool.
-//  * Graceful shutdown of confirm channels (wait for all the confirmations to arrive) and stop taking new publish on shutdown
+//   - Support Reconnecting(with exponential backoff) with RabbitMQ Broker, when it is available again.
+//   - PublishConfirm for reliable Publishing and republish, if message cannot be confirmed.
+//   - Support Channel pool.
+//   - Graceful shutdown of confirm channels (wait for all the confirmations to arrive) and stop taking new publish on shutdown
 type Connection struct {
 	address string // AMQP connection string
 	tlsCfg  *tls.Config

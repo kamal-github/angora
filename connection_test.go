@@ -12,7 +12,7 @@ import (
 
 	"github.com/kamal-github/angora"
 	"github.com/kamal-github/angora/internal"
-	"github.com/streadway/amqp"
+	amqp "github.com/rabbitmq/amqp091-go"
 	"github.com/stretchr/testify/assert"
 )
 
