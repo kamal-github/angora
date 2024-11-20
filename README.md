@@ -100,7 +100,7 @@ Create your pull request on a branch other than main. Add test or example to ref
 This library is covered by the integration tests, before running tests make sure you have RabbitMQ running on local or container (use `docker-compose.yml` to start the rabbitMQ) 
 
 ```
-AMQP_URL=amqp://0.0.0.0/56721
+source .env
 make test
 ```
 
