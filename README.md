@@ -90,9 +90,9 @@ This will close the amqp Connection and all the channels, it will stop taking al
 cli.Shutdown()
 ```
 
-
-## License
-This project is licensed under the [MIT license](LICENSE).
+## FAQs
+**Q: Why was the consumer group concept added?**  
+**A:** The consumer group concept allows you to easily manage (start/stop) all concurrent consumers with a single command, instead of handling them individually.
 
 ## Contributing
 Create your pull request on a branch other than main. Add test or example to reflect your changes.
@@ -105,3 +105,7 @@ make test
 ```
 
 Github workflow will also run the integration tests.
+
+## License
+This project is licensed under the [MIT license](LICENSE).
+
